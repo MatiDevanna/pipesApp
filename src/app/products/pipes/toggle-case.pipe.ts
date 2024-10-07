@@ -10,7 +10,7 @@ export class ToggleCasePipe implements PipeTransform {
 
     return (toUpper) //si recibi true, entonces lo paso a mayuscula
       ? value.toUpperCase()
-      : value.toLocaleLowerCase();
+      : value.toLowerCase();
 
 
   }
