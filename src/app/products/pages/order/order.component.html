@@ -15,11 +15,11 @@
 
   <div class="p-toolbar-group-end">
 
-     <p-button  class="mr-2" label="Por Nombre" icon="pi pi-sort" styleClass="p-button-success"></p-button>
+     <p-button (click)="changeOrder('name')" class="mr-2" label="Por Nombre" icon="pi pi-sort" styleClass="p-button-success"></p-button>
 
-     <p-button  class="mr-2" label="Por volar"  icon="pi pi-sort" styleClass="p-button-danger"></p-button>
+     <p-button (click)="changeOrder('canFly')" class="mr-2" label="Por volar"  icon="pi pi-sort" styleClass="p-button-danger"></p-button>
 
-     <p-button  class="mr-2" label="Por color"  icon="pi pi-sort" styleClass="p-button-help"></p-button>
+     <p-button (click)="changeOrder('color')" class="mr-2" label="Por color"  icon="pi pi-sort" styleClass="p-button-help"></p-button>
 
   </div>
 </p-toolbar>
@@ -27,7 +27,7 @@
 <div class="card">
   <div class="col mt-2">
     <p-panel header="Héroes">
-      <p-table [value]="heroes" [tableStyle]="{ 'min-width': '50rem' }">
+      <p-table [value]="heroes | sortBy:orderBy" [tableStyle]="{ 'min-width': '50rem' }">
         <ng-template pTemplate="header">
             <tr>
                 <th>Nombre</th>
